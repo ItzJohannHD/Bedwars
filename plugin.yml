@@ -1,0 +1,8 @@
+name: BedWars
+version: 1.0
+main: net.primeoase.bedwars.BedWars
+author: PrimeOase
+commands:
+  bedwars:
+    aliases: [bw, game]
+    usage: /bedwars
