@@ -1,0 +1,30 @@
+package net.primeoase.bedwars;
+
+import net.primeoase.bedwars.commands.BedWarsCommand;
+import net.primeoase.bedwars.listener.JoinListener;
+import net.primeoase.bedwars.utils.GameState;
+import org.bukkit.plugin.java.JavaPlugin;
+
+public class BedWars extends JavaPlugin {
+
+    public String prefix = "§8[§6Bedwars§8] §r";
+
+    @Override
+    public void onEnable() {
+        GameState.setGameState(GameState.LOBBY);
+        initCommands();
+        initListener();
+    }
+
+    @Override
+    public void onDisable() {
+
+    }
+
+    public void initCommands() {
+        new BedWarsCommand(this);
+    }
+    public void initListener() {
+        new JoinListener(this);
+    }
+}
